@@ -139,7 +139,11 @@ end
 local parametersD, gradParametersD = netD:getParameters()
 local parametersG, gradParametersG = netG:getParameters()
 
-if opt.display then disp = require 'display' end
+if opt.display then
+
+ disp = require 'display'
+ disp.configure({port=8888})
+end
 
 noise_vis = noise:clone()
 if opt.noise == 'uniform' then
